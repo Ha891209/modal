@@ -9,32 +9,27 @@
 </head>
 
 <body>
-    <section class="modal animation">
-        <i class="fa fa-times"></i>
-        <header class="modal__header">
-            <h1>CSSScript.com</h1>
-        </header>
-        <section class="modal__main">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto debitis dolores eum minima repellendus
-                provident
-                deserunt sunt eligendi eos sint praesentium, pariatur blanditiis perferendis error. Adipisci nam iusto
-                est
-                dolorum.
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto debitis dolores eum minima repellendus
-                provident
-                deserunt sunt eligendi eos sint praesentium, pariatur blanditiis perferendis error. Adipisci nam iusto
-                est
-                dolorum.</p>
-        </section>
-        <footer>
-            <button class="modal__okey">Okey</button>
-            <button class="modal__cancel">Cancel</button>
-        </footer>
-    </section>
-    <section>
-        <button class="button__modal">modal</button>
-    </section>
+    <h1>Modal Project</h1>
+    <button onclick="openModal()">Open Modal</button>
 
-    <script src="js/modal.js"></script>
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close">
+                <i class="fa fa-times" onclick="closeModal()"></i>
+            </span>
+            <h3>CSSScript.com</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente omnis mollitia similique fuga, suscipit
+                hic ipsum ipsa quas ullam repudiandae cumque deserunt error aut porro reiciendis officiis magnam
+                perspiciatis nesciunt.</p>
+            <span class="buttons">
+                <button class="btn btn-success">Okey</button>
+                <button class="btn btn-danger">Cancel</button>
+            </span>
+        </div>
+    </div>
+
+    <script src="modal.js"></script>
 </body>
+
 </html>
+
