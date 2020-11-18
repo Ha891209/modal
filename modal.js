@@ -23,3 +23,8 @@ function closeModalByOuterClick() {
     })
   }
 }
+window.addEventListener('click', function (ev){
+    if (ev.target == modal) {
+        modal.setAttribute('class', 'modal');
+    }
+});
