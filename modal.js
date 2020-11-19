@@ -1,21 +1,15 @@
-"use strict";
+const openButton = document.querySelector('.getModalBtn');
+const modal = document.querySelector('.modal');
+const closeModal = document.querySelector('.modal__close');
+const closeButton = document.querySelector('.closebtn');
 
-let modalContent = document.querySelector('#modal__content');
-let hider = document.querySelector('#hider');
-let initBtn = document.querySelector('#init-button');
+const giveClassFunction = () => modal.setAttribute('class', 'modal showModal');
+const takeAwayClassFunction = () => modal.setAttribute('class', 'modal');
 
-initBtn.addEventListener('click', showModal);
+openButton.addEventListener('click', giveClassFunction);
 
-function showModal() {
-    modalContent.setAttribute('class', 'modal__content--visible')
-    hider.setAttribute('class', 'hider--visible')
-}
-
-function hideModal() {
-    modalContent.setAttribute('class', 'modal__content--hidden')
-    hider.setAttribute('class', 'hider--hidden')
-}
-
+closeModal.addEventListener('click', takeAwayClassFunction);
+closeButton.addEventListener('click', takeAwayClassFunction);
 
 window.addEventListener('click', function (ev){
     if (ev.target == modal) {

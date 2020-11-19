@@ -10,23 +10,29 @@
 
 <body>
     <h1>Modal Project</h1>
-    <button onclick="openModal()">Open Modal</button>
-
-    <div class="modal">
+    <button class="getModalBtn">Modal</button>
+    <section class="modal">
         <div class="modal-content">
-            <span class="close">
-                <i class="fa fa-times" onclick="closeModal()"></i>
-            </span>
+            <span class="modal__close">&times;</span>
+    <div class="modal-text">
             <h3>CSSScript.com</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente omnis mollitia similique fuga, suscipit
                 hic ipsum ipsa quas ullam repudiandae cumque deserunt error aut porro reiciendis officiis magnam
                 perspiciatis nesciunt.</p>
-            <span class="buttons">
-                <button class="btn btn-success">Okey</button>
-                <button class="btn btn-danger">Cancel</button>
-            </span>
+                <footer class="modal__footer">
+                    <div class="btnGroup">
+                        <button class="succedbtn green">
+                            Okay
+                        </button>
+                        <button class="closebtn red">
+                            Close
+                        </button>
+                    </div>
+            </div>
+        </footer>
         </div>
-    </div>
+        </section>
+        
 
     <script src="modal.js"></script>
 </body>
