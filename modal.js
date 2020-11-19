@@ -1,28 +1,22 @@
 "use strict";
 
-const modal = document.querySelector(".modal");
+let modalContent = document.querySelector('#modal__content');
+let hider = document.querySelector('#hider');
+let initBtn = document.querySelector('#init-button');
 
-function openModal() {
-  modal.classList.add("flex", "animated-fade-in");
-  window.setTimeout(() => {
-    closeModalByOuterClick()
-  }, 1000)
+initBtn.addEventListener('click', showModal);
+
+function showModal() {
+    modalContent.setAttribute('class', 'modal__content--visible')
+    hider.setAttribute('class', 'hider--visible')
 }
 
-function closeModal() {
-  modal.classList.add("animated-fade-out");
-  window.setTimeout(() => {
-    modal.classList.remove("flex")
-  }, 900);
+function hideModal() {
+    modalContent.setAttribute('class', 'modal__content--hidden')
+    hider.setAttribute('class', 'hider--hidden')
 }
 
-function closeModalByOuterClick() {
-  if (modal.classList.contains("flex") == true) {
-    document.addEventListener("click", () => {
-      closeModal();
-    })
-  }
-}
+
 window.addEventListener('click', function (ev){
     if (ev.target == modal) {
         modal.setAttribute('class', 'modal');

@@ -22,20 +22,6 @@ html {
     background-color: rgba(0, 0, 0, 0.4);
   }
   
-  .flex {
-   display: flex;
-  }
-  
-  .animated-fade-in {
-    animation: fadeIn;
-  }
-
-  
-  .animated-fade-out {
-    animation: fadeOut;
-  }
-
-  
   .modal-content {
     background-color: #fefefe;
     margin: auto;
@@ -50,6 +36,18 @@ html {
     }
   }
   
+  .modal {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.3s, opacity 0.3s linear;
+  }
+
+.modal__visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s linear;
+}
+
   .close {
     color: #aaaaaa;
     float: right;
