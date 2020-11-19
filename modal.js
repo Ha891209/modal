@@ -7,7 +7,6 @@ const giveClassFunction = () => modal.setAttribute('class', 'modal showModal');
 const takeAwayClassFunction = () => modal.setAttribute('class', 'modal');
 
 openButton.addEventListener('click', giveClassFunction);
-
 closeModal.addEventListener('click', takeAwayClassFunction);
 closeButton.addEventListener('click', takeAwayClassFunction);
 
