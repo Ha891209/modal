@@ -1,17 +1,34 @@
-const openButton = document.querySelector('.getModalBtn');
 const modal = document.querySelector('.modal');
-const closeModal = document.querySelector('.modal__close');
-const closeButton = document.querySelector('.closebtn');
+const body = document.querySelector('body');
+const firstFocusableElement = document.querySelector('.modal__close-button');
 
-const giveClassFunction = () => modal.setAttribute('class', 'modal showModal');
-const takeAwayClassFunction = () => modal.setAttribute('class', 'modal');
+const openModalListener = () => {
+    document
+        .querySelector('.open-modal-button')
+        .addEventListener('click', openModalHandler);
+};
 
-openButton.addEventListener('click', giveClassFunction);
-closeModal.addEventListener('click', takeAwayClassFunction);
-closeButton.addEventListener('click', takeAwayClassFunction);
+const openModalHandler = () => {
+    modal.classList.add('modal--show', 'modal--fade-in');
+    body.classList.add('modal-opened');
+    firstFocusableElement.focus();
+};
 
-window.addEventListener('click', function (ev){
-    if (ev.target == modal) {
-        modal.setAttribute('class', 'modal');
-    }
-});
+const closeModalListener = () => {
+    const elements = document.querySelectorAll('.modal__overlay, .modal button')
+    elements.forEach(element => {
+        element.addEventListener('click', closeModalHandler);
+    })
+};
+
+const closeModalHandler = () => {
+    modal.classList.add('modal--fade-out');
+    modal.classList.remove('modal--fade-in');
+    body.classList.remove('modal-opened');
+    setTimeout(() => {
+        modal.classList.remove('modal--show', 'modal--fade-out');
+    }, 300)
+}
+
+openModalListener();
+closeModalListener();
